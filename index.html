@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Tecnológicos JLJ</title>
+  <link rel="shortcut icon" href="SERVICIOS/IMGS/logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-image: url(SERVICIOS/IMGS/Servicios_tecnologicos.jpg);
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #000;
+      max-width: 300px;
+      margin: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-link:hover {
+      transform: scale(1.05);
+    }
+
+    .service-image {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .service-image:hover {
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #clientes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .client-image {
+      max-width: 300px;
+      height: auto;
+      margin: 100px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .client-image.active {
+      opacity: 1;
+    }
+
+    .contact-form {
+      margin-top: 20px;
+      transition: opacity 0.5s ease;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .contact-form button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #45a049;
+    }
+
+    .contact-form p {
+      margin-bottom: 10px;
+    }
+
+    .contact-form ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .contact-form ul li {
+      margin-bottom: 5px;
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .image-gallery-item {
+      margin: 10px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .image-gallery-item img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .image-gallery-item:hover {
+      opacity: 0.8;
+    }
+
+    .customer-comments {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .customer-comments.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Servicios Tecnológicos JLJ</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#comentarios">Comentarios</a></li>
+    </ul>
+  </nav>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="service-container">
+      <a class="service-link" href="SERVICIOS/detalle-servicio-1.html">
+        <img class="service-image" src="SERVICIOS/IMGS/Aplicaciones-moviles.jpg" alt="Imagen del servicio 1">
+        <h3 class="service-title">Desarrollo de aplicaciones móviles</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-2.html">
+        <img class="service-image" src="SERVICIOS/IMGS/diseno-web.jpg" alt="Imagen del servicio 2">
+        <h3 class="service-title">Diseño de sitios web responsivos</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-3.html">
+        <img class="service-image" src="SERVICIOS/IMGS/solucione en la nube.jpg" alt="Imagen del servicio 3">
+        <h3 class="service-title">Implementación de soluciones en la nube</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-4.html">
+```html
+        <img class="service-image" src="SERVICIOS/IMGS/seguridad.jpg" alt="Imagen del servicio 4">
+        <h3 class="service-title">Consultoría en seguridad informática</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-5.html">
+        <img class="service-image" src="SERVICIOS/IMGS/desarrollo de software a medida.jpg" alt="Imagen del servicio 5">
+        <h3 class="service-title">Desarrollo de software a medida</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-6.html">
+        <img class="service-image" src="SERVICIOS/IMGS/Network-Services.jpg" alt="Imagen del servicio 6">
+        <h3 class="service-title">Optimización de rendimiento de sistemas</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-7.html">
+        <img class="service-image" src="SERVICIOS/IMGS/SISTEMAS-EMPRESARIALES.jpg" alt="Imagen del servicio 7">
+        <h3 class="service-title">Integración de sistemas empresariales</h3>
+      </a>
+      <a class="service-link" href="SERVICIOS/detalle-servicio-8.html">
+        <img class="service-image" src="SERVICIOS/IMGS/analisis-de-datos.jpg" alt="Imagen del servicio 8">
+        <h3 class="service-title">Gestión y análisis de datos</h3>
+      </a>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>Servicios Tecnológicos JLJ es una empresa dedicada a brindar soluciones tecnológicas para empresas y organizaciones. Nuestro objetivo principal es ofrecer servicios de alta calidad que ayuden a nuestros clientes a alcanzar sus objetivos comerciales y aprovechar al máximo las oportunidades tecnológicas.</p>
+    <p>Contamos con un equipo de profesionales altamente capacitados en diversas áreas de la tecnología, incluyendo desarrollo de software, diseño web, análisis de datos, seguridad informática y más. Nos esforzamos por mantenernos a la vanguardia de las últimas tendencias tecnológicas y utilizar las mejores prácticas en cada proyecto que emprendemos.</p>
+    <p>En Servicios Tecnológicos JLJ, nos apasiona ayudar a nuestros clientes a superar desafíos y lograr el éxito a través de soluciones tecnológicas innovadoras y eficientes. Trabajamos en estrecha colaboración con nuestros clientes para comprender sus necesidades y ofrecer soluciones personalizadas que impulsen su crecimiento y mejoren su productividad.</p>
+    <p>Ya sea que necesites desarrollo de aplicaciones móviles, diseño de sitios web, análisis de datos u otros servicios tecnológicos, estamos aquí para ayudarte. ¡Confía en nosotros como tu socio tecnológico confiable!</p>
+  </section>
+
+  <section id="clientes">
+    <h2>Nuestros Clientes</h2>
+    <div class="image-gallery">
+      <a data-fancybox="gallery" href="SERVICIOS/IMGS/1.jpeg" class="image-gallery-item">
+        <img src="SERVICIOS/IMGS/1.jpeg" alt="Cliente 1">
+      </a>
+      <a data-fancybox="gallery" href="SERVICIOS/IMGS/2.jpeg" class="image-gallery-item">
+        <img src="SERVICIOS/IMGS/2.jpeg" alt="Cliente 2">
+      </a>
+      <a data-fancybox="gallery" href="SERVICIOS/IMGS/3.jpeg" class="image-gallery-item">
+        <img src="SERVICIOS/IMGS/3.jpeg" alt="Cliente 3">
+      </a>
+      <a data-fancybox="gallery" href="SERVICIOS/IMGS/4.jpeg" class="image-gallery-item">
+        <img src="SERVICIOS/IMGS/4.jpeg" alt="Cliente 4">
+      </a>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact-form">
+      <form action="SERVICIOS/enviar_formulario.php" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <p>También puedes comunicarte con nosotros a través de los siguientes medios:</p>
+    <ul>
+      <li>Teléfono: 929-222-980</li>
+      <li>Email: serviciosJLJ@gmail.com</li>
+      <li>Dirección: Av. Mansiche, Trujillo-Perú</li>
+    </ul>
+  </section>
+
+  <section id="comentarios">
+    <h2>Comentarios de nuestros clientes</h2>
+    <div class="customer-comments">
+      <ul>
+        <li>
+          <p><strong>Cliente 1:</strong> ¡Excelente servicio! Estoy muy satisfecho con los resultados obtenidos.</p>
+        </li>
+        <li>
+          <p><strong>Cliente 2:</strong> El equipo de Servicios Tecnológicos JLJ es altamente profesional y eficiente. Recomiendo sus servicios.</p>
+        </li>
+        <li>
+          <p><strong>Cliente 3:</strong> Gracias a JLJ, hemos logrado mejorar nuestra productividad y optimizar nuestros sistemas.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Derechos de Autor &copy; 2023 Servicios Tecnológicos JLJ. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>
+    const clientImages = document.querySelectorAll('.client-image');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % clientImages.length;
+      clientImages.forEach(image => image.classList.remove('active'));
+      clientImages[currentSlide].classList.add('active');
+    }, 3000);
+
+    $('[data-fancybox="gallery"]').fancybox({
+      buttons: [
+        "zoom",
+        "slideShow",
+        "fullScreen",
+        "thumbs",
+        "close"
+      ],
+      loop: true,
+      protect: true
+    });
+
+    window.addEventListener('scroll', () => {
+    const serviceLinks = document.querySelectorAll('.service-link');
+      const contactForm = document.querySelector('.contact-form');
+      const customerComments = document.querySelector('.customer-comments');
+
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      serviceLinks.forEach(link => {
+        const linkPosition = link.offsetTop;
+        if (scrollPosition + windowHeight > linkPosition) {
+          link.classList.add('show');
+        }
+      });
+
+      const formPosition = contactForm.offsetTop;
+      if (scrollPosition + windowHeight > formPosition) {
+        contactForm.style.opacity = 1;
+      }
+
+      const commentsPosition = customerComments.offsetTop;
+      if (scrollPosition + windowHeight > commentsPosition) {
+        customerComments.classList.add('show');
+      }
+    });
+  </script>
+</body>
+
+</html>
